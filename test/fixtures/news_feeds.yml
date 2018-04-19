@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  property_id: 1
+  category_id: 1
+  start_date: 2018-01-02
+  end_date: 2018-01-02
+  offers: MyString
+  description: MyText
+
+two:
+  name: MyString
+  property_id: 1
+  category_id: 1
+  start_date: 2018-01-02
+  end_date: 2018-01-02
+  offers: MyString
+  description: MyText

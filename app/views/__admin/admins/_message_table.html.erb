@@ -1,0 +1,70 @@
+
+<div class="">
+    <div class="title-line wow fadeInRight animated"></div>
+</div>
+<div class="row wow fadeInRight animated">
+    <div class="col-sm-6">
+        <p class="author-category">
+            <a href="#">Admin Users</a>
+        </p>
+    </div>
+    <div class="col-sm-6 right" >
+       <!--  <p class="date-comments">
+            <a href="single.html"><i class="fa fa-comment-o"></i> 8 Comments</a>
+        </p> -->
+    </div>
+</div> 
+
+
+
+
+<table border=1 style="text-align: center; width: 310%;">
+	<tr>
+		<th>Name</th>
+        <th>Subject</th>
+        <th>Description</th>
+        <th>Email</th>
+        <th>Phone No</th>
+	</tr>
+	<% for message in @messages%>
+	<tr>
+		<tr>
+			<td><%= message.full_name %></td>
+            <td><%= message.subject %></td>
+            <td><%= message.desc %></td>
+            <td><%= message.email %></td>
+            <td><%= message.number %></td>
+		</tr>
+	</tr>
+	<% end %>
+</table>
+
+<!-- </div> -->
+
+<div class="col-md-12"> 
+    <div class="pull-right">
+        <div class="pagination">
+            <div class="page_info">
+                <%= page_entries_info @users %>
+            </div>
+            <div class="pagination_links">
+                <%= will_paginate @users, :container => false %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+$(function(){
+   $('#pagination a').attr('data-remote', 'true')
+});
+</script>
+
+<style type="text/css">
+	.new{
+		    float: right;
+		margin: -40px -198%;
+	}
+</style>

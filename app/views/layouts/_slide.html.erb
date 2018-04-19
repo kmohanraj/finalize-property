@@ -1,0 +1,132 @@
+<div class="slider-area">
+    <div class="slider">
+        <!-- <div id="bg-slider" class="owl-carousel owl-theme">
+            <div class="item"><img src="assets/img/slide1/slider-image-1.jpg" alt="GTA V"></div>
+            <div class="item"><img src="assets/img/slide1/slider-image-2.jpg" alt="The Last of us"></div>
+            <div class="item"><img src="assets/img/slide1/slider-image-3.jpg" alt="GTA V"></div>
+        </div> -->
+    <div class="item"><img src="assets/img/slide1/slider-image-3.jpg" alt="GTA V"></div>
+    </div>
+   
+    <div class="slider-content">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12" style="margin-top: -23px;">
+                <!-- <br> -->
+                <!-- <div class="search-form wow pulse" data-wow-delay="0.8s">
+
+                    <form action="" class=" form-inline">
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Key word">
+                        </div>
+
+                        <div class="form-group">                                   
+                            <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
+
+                                <option>New york, CA</option>
+                                <option>Paris</option>
+                                <option>Casablanca</option>
+                                <option>Tokyo</option>
+                                <option>Marraekch</option>
+                                <option>kyoto , shibua</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">                                     
+                            <select id="basic" class="selectpicker show-tick form-control">
+                                <option> -Status- </option>
+                                <option>Rent </option>
+                                <option>Boy</option>
+                                <option>used</option>  
+
+                            </select>
+                        </div>
+
+                        <button class="btn search-btn" type="submit"><i class="fa fa-search"></i></button>
+
+                        <button class="btn search-btn prop-btm-sheaerch" type="submit"><i class="fa fa-search"></i></button>  
+
+                    </form>
+                    
+                </div> -->
+                
+                <h4 style="color: black"><b>We Finalize Your Property!</b></h4>
+                <div class="row wow fadeInRight animated">
+
+
+                     <div class="panel-body" data-wow-delay="0.8s">
+                        <%= form_tag(properties_path, method: :get) do %>
+                            <%#= text_field_tag :bill, params[:bill], class: 'datepicker' %>
+                            <%#= text_field_tag :search, params[:search], class: 'tag', placeholder: "Eg..search city and 2bhk " %>
+                            <!-- <span class="map"><i class="fa fa-map-marker fa-2x"></i></span> -->
+                            <%= text_field_tag :search, params[:search], class: 'tag', placeholder: "eg: enter your locality" %> 
+                            <div class="search">
+                                <%= submit_tag 'Search', name: nil ,class: "navbar-btn nav-button wow bounceInRight"%>
+                            </div>
+                        <% end %>
+                     </div>
+                </div>
+                    <h3 style="color: #fd6000"><b>We Take Your Home, We Provide Chennai Only</b></h3>
+                    <!-- <h4 style="color: black"><b>We Finalize Your Property!</b></h4> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .search{
+        height: 44px;
+    width: 88px;
+    float: right;
+    padding-right: 3px;
+    margin-right: 23px;
+    margin-top: -52px;
+    }
+    .tag{
+        display: block;
+    width: 80%;
+    height: 44px;
+    padding: 6px 12px;
+    margin-left: 6%;
+    font-size: 25px;
+    line-height: 1.42857;
+    color: #838383;
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid #DADADA;
+    border-radius: 0px;
+    box-shadow: 0px 1px 1px rgba(179, 179, 179, 0.1) inset;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    }
+    .map{
+            width: 10%;
+    float: left;
+    margin-right: -34px;
+    margin-top: 12px;
+    padding-left: 8%;
+    color: #fd6000;
+    }
+    .search2{
+        border-radius: 200px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.0em;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 12px;
+    margin-right: 3px;
+    padding: 7px 16px 6px;
+    text-decoration: none;
+    background-color: #fd6000;
+    background-image: linear-gradient(180deg, #fd6000, #fd6000);
+    text-shadow: #000 0 1px 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 0px rgba(255, 255, 255, 0.2) inset;
+    border: solid 0px #fd6000;
+    border-color: #fb6000;
+    border-top-color: #fd6000;
+    border-right-color: #fd6000;
+    border-bottom-color: #f76000;
+    border-left-color: #ff3b30;
+    color: #333;
+    cursor: pointer;
+    }
+</style>

@@ -1,0 +1,42 @@
+
+
+ <style>
+    #reg{
+            width: 106px;
+    float: right;
+    }
+</style>
+
+<div class="container">
+  <div class="col-md-6">
+      <div class="box-for overflow">                         
+          <div class="col-md-12 col-xs-12 login-blocks">
+              <!-- <h2>Login : </h2>  -->
+
+                  <%= form_for :category, html: {class: 'finance_form'}, method: :post, remote: true do |c| %>
+                    <div class="form-group">
+                        <%= c.label :name, "Category Name:" %>
+                        <%= c.text_field :name, required: true, class: "form-control"%>
+                    </div>
+
+                    <div class="form-group">
+                        <%= c.label :desc, "Description"%>
+                        <%= c.text_field :desc, required: true,class: "form-control"%>
+                    </div>
+
+                    <div class="form-group">
+                        <%= c.label :is_stock, "Status"%>
+                        <%= c.text_field :is_stock, required: true,class: "form-control"%>
+                    </div>
+
+                    <div  class="text-center" id="reg">
+                        <%= c.submit "Save",class: "btn btn-default"%>
+                    </div>
+                  <% end %>
+
+          </div>
+          
+      </div>
+  </div>
+
+</div>

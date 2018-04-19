@@ -1,0 +1,117 @@
+<div class="page-head"> 
+  <div class="container">
+      <div class="row">
+          <div class="page-head-content">
+              <h1 class="page-title">User Account Details</h1>               
+          </div>
+      </div>
+  </div>
+</div>
+<div class="content-area blog-page padding-top-40" style="background-color: #FCFCFC; padding-bottom: 55px;">
+    <div class="container">
+        <div class="row">
+            <div class="blog-asside-right col-md-3">
+                <div class="panel panel-default sidebar-menu wow fadeInRight animated" >
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Account</h3>
+                        <ul class="nav nav-tabs tabs-left sideways">
+                            <li class="active"><a href="#home-v" data-toggle="tab">Home</a></li>
+                            <li class="panel-title"><a href="#category-v" data-toggle="tab">Category</a></li>
+                            <li class="panel-title"><a href="#properties-v" data-toggle="tab">Properties</a></li>
+                            <li class="panel-title"><a href="#settings-v" data-toggle="tab">Messages</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>   
+            
+            <div class="blog-lst col-md-9 p0">
+                <section id="id-100" class="post single">
+
+                  <div id="post-content" class="post-body single wow fadeInLeft animated">
+                      <div  class="col-sm-6">
+                       <!--  <h3>User Account</h3>
+                        <hr/> -->
+                        <div class="col-xs-9">
+                          <div class="tab-content">
+                            <div class="tab-pane active" id="home-v">
+                              <%= render 'admin/admins/user_table'%>
+                            </div>
+                            
+                            <div class="tab-pane" id="category-v">
+                              <%= render 'admin/categories/table'%>
+                            </div>
+                            
+                            <div class="tab-pane" id="properties-v">
+                               <%= render 'admin/properties/table'%>
+                            </div>
+                            
+                            <div class="tab-pane" id="settings-v">
+                              <%= render 'admin/admins/message_table'%>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                      </div>
+                  </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+     $( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+     $( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+});
+
+</script>
+
+
+
+<style>
+.tabs-left, .tabs-right {
+  border-bottom: none;
+  padding-top: 2px;
+}
+.tabs-left {
+  border-right: 1px solid #ddd;
+}
+.tabs-right {
+  border-left: 1px solid #ddd;
+}
+.tabs-left>li, .tabs-right>li {
+  float: none;
+  margin-bottom: 2px;
+}
+.tabs-left>li {
+  margin-right: -1px;
+}
+.tabs-right>li {
+  margin-left: -1px;
+}
+.tabs-left>li.active>a,
+.tabs-left>li.active>a:hover,
+.tabs-left>li.active>a:focus {
+  border-bottom-color: #ddd;
+  border-right-color: transparent;
+}
+
+.tabs-right>li.active>a,
+.tabs-right>li.active>a:hover,
+.tabs-right>li.active>a:focus {
+  border-bottom: 1px solid #ddd;
+  border-left-color: transparent;
+}
+.tabs-left>li>a {
+  border-radius: 4px 0 0 4px;
+  margin-right: 0;
+  display:block;
+}
+.tabs-right>li>a {
+  border-radius: 0 4px 4px 0;
+  margin-right: 0;
+}
+</style>

@@ -1,0 +1,38 @@
+
+ <style>
+    #reg{
+            width: 106px;
+    float: right;
+    }
+    #cancel{
+          width: 32%;
+    float: right;
+    color: orange;
+    }
+</style>
+
+   <div class="page-head"> 
+      <div class="container">
+          <div class="row">
+              <div class="page-head-content">
+                  <h1 class="page-title">User Account / Edit  </h1>               
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="register-area" style="background-color: rgb(249, 249, 249);">
+      <div class="container">
+
+          <div class="col-md-6">
+              <div class="box-for overflow">
+                  <div class="col-md-12 col-xs-12 register-blocks">
+                      <h2>Edit account : </h2> 
+                      <%= render 'devise/registrations/user_edit'%>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>      

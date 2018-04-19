@@ -1,0 +1,176 @@
+
+<h4 class="info-text"> New Property </h4>
+<%= form_for @property do |pr| %>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="col-sm-3">
+                <div class="form-group">
+                   <%= pr.label :name, "Property Name:"%>
+                   <%= pr.text_field :name ,required: true, class: "form-control" %>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= pr.label :size, "Sqft:"%>
+                    <%= pr.text_field :size, class: "form-control"%>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= pr.label :price, "Price"%>
+                    <%= pr.text_field :price, class: "form-control" %>
+                </div>
+            </div>
+
+             <div class="col-sm-3">
+                <div class="form-group">
+                    <%= pr.label :category_id, "Property Type"%>
+                    <%= pr.select :category_id, Category.order("name ASC").map {|pt| [pt.name, pt.id]},class: "form-control", :prompt =>"--Select--" %> </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= pr.label :price_sqft, "Price/Per Sqft:" %>
+                    <%= pr.text_field :price_sqft, class: "form-control"%>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= pr.label :bhk, "BHK:" %>
+                    <%= pr.text_field :bhk, class: "form-control"%>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= pr.label :city, "City:" %>
+                    <%= pr.text_field :city, class: "form-control"%>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= pr.label :bedroom, "Bedroom:" %>
+                    <%= pr.text_field :bedroom, class: "form-control"%>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= pr.label :bathroom, "Bathroom:" %>
+                    <%= pr.text_field :bathroom, class: "form-control"%>
+                </div>
+            </div>
+
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= pr.label :toilet, "Toilet:" %>
+                    <%= pr.text_field :toilet, class: "form-control"%>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= pr.label :locality, "Locality:" %>
+                    <%= pr.text_field :locality, class: "form-control"%>
+                </div>
+            </div>
+        </div>
+    </div>
+<hr>
+<h4>Building Details:</h4>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= pr.label :status, "Project Status" %>
+                    <%#= pr.text_field :status, class: "form-control"%>
+                    <%= select_tag :status,  options_from_collection_for_select(Property::ENUM_ENTITY, :last, :first ), { :prompt => "Select Status"} %>
+
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= pr.label :sales_type, "Sale Type:" %>
+                    <%= pr.text_field :sales_type, class: "form-control"%>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= pr.label :builder_name, "Builder Name:" %>
+                    <%= pr.text_field :builder_name, class: "form-control"%>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= pr.label :project_address, "Project Address:" %>
+                    <%= pr.text_field :project_address, class: "form-control"%>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <%= pr.label :desc, "Property Description:"%>
+                    <%= pr.text_field :desc, class: "form-control"%>
+                </div>
+            </div>
+        <!-- </div> -->
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= pr.label :image, "Property Image"%>
+                    <%= pr.file_field :image, required: true, class: "form-control" %>
+                    <% if pr.object.image? %>
+                      <%= image_tag pr.object.image.thumb.url %>
+                      <%= pr.label :remove_image %>
+                      <%= pr.check_box :remove_image %>
+                    <% end %>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <!-- <div class="form-group"> -->
+                    <div class="submit">
+                        <%= pr.submit "Create", class: 'navbar-btn nav-button wow bounceInRight'  %>
+                      <%#= pr.submit 'Save'%>
+                    </div>                
+                <!-- </div> -->
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- <div class="submit"> -->
+        <%#= pr.submit "Submit", class: 'navbar-btn nav-button wow bounceInRight'  %>
+      <%#= pr.submit 'Save'%>
+    <!-- </div> -->
+    
+<% end %>
+
+<style>
+    .submit{
+        width: 87px;
+    padding-top: 21px;
+    margin-left: 29%;
+    margin-bottom: 10%;
+    }
+</style>

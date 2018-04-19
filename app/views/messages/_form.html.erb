@@ -1,0 +1,47 @@
+<%= form_for (@message), html: {class: 'finance_form'}, method: :post, remote: true do |m| %>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= m.label :name, "Full Name:"%>
+                <%= m.text_field :name, class: "form-control"%>
+            </div>
+        </div>
+        
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= m.label :email, "Email:"%>
+                <%= m.email_field :email, class: "form-control"%>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= m.label :phone, "Mobile No:"%>
+                <%= m.text_field :phone, class: "form-control"%>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= m.label :locality, "Locality:"%>
+                <%= m.text_field :locality, class: "form-control"%>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= m.label :price_range, "Price Range:"%>
+                <%= m.text_field :price_range, class: "form-control"%>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <%= m.label :desc, "Message:"%>
+                <%= m.text_area :desc, class: "form-control"%>
+            </div>
+        </div>
+        <div class="col-sm-12 text-center">
+            <%= m.submit 'Send message', class: "btn btn-primary"%>
+            <!-- <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send message</button> -->
+        </div>
+    </div>
+<% end %>

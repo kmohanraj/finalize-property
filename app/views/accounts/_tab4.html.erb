@@ -1,0 +1,94 @@
+<div id="tabs-nested" class="tabs">
+    <ul>
+        <li><a href="#tabs-nested-1">Patient</a></li>
+		<li><a href="#tabs-nested-1">Schedule</a></li>
+		<li><a href="#tabs-nested-1">Reports</a></li>
+	</ul>
+	<div id="tabs-nested-1">
+		<div id="tabs-nested-left" class="tabs">
+			<ul>
+				<li><a href="#tabs-nested-left-1">facesheets</a></li>
+				<li><a href="#tabs-nested-left-2">History</a></li>
+				<li><a href="#tabs-nested-left-1">Problems</a></li>
+                <li><a href="#tabs-nested-left-2">medications</a></li>
+                <li><a href="#tabs-nested-left-1">Demographics</a></li>
+                <li><a href="#tabs-nested-left-2">Studies</a></li>
+                <li><a href="#tabs-nested-left-1">Labs</a></li>
+                <li><a href="#tabs-nested-left-2">Allergies</a></li>
+                <li><a href="#tabs-nested-left-1">Vitals</a></li>
+                <li><a href="#tabs-nested-left-2">Documents</a></li>
+			</ul>
+			<div id="tabs-nested-left-1">
+				<p>Nested tabs 1</p>
+			</div>
+   			<div id="tabs-nested-left-2">
+				<p>Nested tabs 2</p>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function() {
+    $( "#tabs-nested" ).tabs();
+    $( "#tabs-nested-1" ).tabs();
+  });
+</script>
+
+<style>
+	/* Center Aligining tabs - Start */http://jsfiddle.net/user/dashboard/
+#tabs-nested .ui-tabs-nav {
+	/*height: 2.35em;*/
+	text-align: center;
+}
+#tabs-nested .ui-tabs-nav li {
+	display: inline-block;
+	float: none;
+	top: 0px;
+	margin: 0em;
+}
+/* Center Aligining tabs - End */
+
+/* Nested Tabs - Start */
+#tabs-nested > .ui-tabs-panel { 
+    padding: 0em; 
+} 
+#tabs-nested-left { 
+    position: relative; 
+    padding-left: 6.5em; 
+} 
+#tabs-nested-left .ui-tabs-nav { 
+    position: absolute; 
+    left: 0.25em; 
+    top: 0.25em; 
+    bottom: 0.25em; 
+    width: 10em; 
+    padding: 0.2em 0 0.2em 0.2em; 
+} 
+#tabs-nested-left .ui-tabs-nav li { 
+    right: 1px; 
+    width: 100%; 
+    border-right: none; 
+    border-bottom-width: 1px !important; 
+    -moz-border-radius: 4px 0px 0px 4px; 
+    -webkit-border-radius: 4px 0px 0px 4px; 
+    border-radius: 4px 0px 0px 4px; 
+    overflow: hidden; 
+} 
+#tabs-nested-left .ui-tabs-nav li.ui-tabs-selected, 
+#tabs-nested-left .ui-tabs-nav li.ui-state-active { 
+    border-right: 1px solid transparent; 
+} 
+#tabs-nested-left .ui-tabs-nav li a { 
+    float: right; 
+    width: 100%; 
+    text-align: right; 
+} 
+#tabs-nested-left > div { 
+    margin-left:3.5em;
+    height: 25em; 
+    overflow: auto;
+}
+/* Nested Tabs - End */
+</style>

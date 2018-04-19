@@ -1,0 +1,14 @@
+
+<% if @query.errors.empty? %>
+  $('.query_form')[0].reset();
+  $('#ModalAddFinance').modal('hide');
+    toastr["success"]('Message has been send successfully.')
+   setTimeout(function(){
+    window.location.reload(true);
+    }, 2000);
+<%else%>
+  $('.errors_query').append('<p class = "error_msg" ><%= @query.errors.full_messages.join(' , ') %></p>');
+  setTimeout(function(){
+      $('.error_msg').remove();
+    }, 3000);
+<%end%>

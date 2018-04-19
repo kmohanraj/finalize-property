@@ -1,0 +1,42 @@
+<h4>New Category</h4>
+<%= form_for Category.new do |c|%>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= c.label :name, "Category Name:"%>
+                    <%= c.text_field :name, class: "form-control"%>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= c.label :desc, "Category Description"%>
+                    <%= c.text_field :desc, required: true, class: "form-control" %>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <%= c.label :is_stock, "Ststus:"%>
+                    <%= c.text_field :is_stock, required: true, class: "form-control" %>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="submit">
+                <%= c.submit "Create", class: 'navbar-btn nav-button wow bounceInRight'  %>
+            </div>                
+            
+        </div>
+    </div>
+<% end %>
+
+
+<style>
+    .submit{
+            width: 82px;
+    margin-left: 339%;
+    margin-top: -12%;
+    margin-bottom: 10%;
+    }
+</style>

@@ -1,0 +1,21 @@
+
+  <%= form_for @category do |c| %>
+    <div>
+    	<%= c.label :name, "Category Name:" %>
+    	<%= c.text_field :name, required: true%>
+    </div>
+
+    <div>
+    	<%= c.label :desc, "Description"%>
+    	<%= c.text_field :desc, required: true%>
+    </div>
+
+    <div>
+    	<%= c.label :is_stock, "Status"%>
+    	<%= c.text_field :is_stock, required: true%>
+    </div>
+
+    <div>
+    	<%= c.submit "Save"%>
+    </div>
+  <% end %>

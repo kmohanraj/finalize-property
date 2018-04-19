@@ -1,0 +1,42 @@
+
+<div class="" id="contact1">                        
+    <%#= form_for :enquirey do |e| %>
+    <%#= form_for :enquirey, html: {class: 'enquirey_form'}, method: :post, remote: true do |e| %>
+    <%= form_for (:query), url: enquiries_path(@query), html: {class: 'finance_form'}, method: :post, remote: true do |e| %>
+
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="firstname">Name</label>
+                    <!-- <input type="text" class="form-control" id="firstname"> -->
+                    <%= e.text_field :name, class: "form-control", required: true%>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <%= e.label :phone, "Mobile No"%>
+                    <%= e.text_field :phone, class: "form-control", id: 'phone', required: true, maxlength: 10%>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="email">locality</label>
+                    <%= e.text_field :locality, class: "form-control", required: true%>
+                    <!-- <input type="text" class="form-control" id="email"> -->
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="subject">Message</label>
+                    <!-- <textarea type="text" class="form-control" id="subject"></textarea> -->
+                    <%= e.text_area :purpose, class: "form-control", required: true%>
+                </div>
+            </div>
+            <div class="submit">
+                <%= e.submit "Send Message", class: "btn btn-primary"%>
+                <!-- <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send message</button> -->
+            </div>
+        </div>
+    <% end %>
+</div>

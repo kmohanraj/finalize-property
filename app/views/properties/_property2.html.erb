@@ -1,0 +1,194 @@
+        <div class="page-head __web-inspector-hide-shortcut__"> 
+            <div class="container">
+                <div class="row">
+                    <div class="page-head-content">
+                        <h1 class="page-title">List Properties</h1>               
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="properties-area recent-property" style="background-color: #FFF;">
+            <div class="container">  
+                <div class="row">
+                     
+                <div class="col-md-3 p0 padding-top-40">
+                    <div class="blog-asside-right pr0">
+                        <div class="panel panel-default sidebar-menu wow fadeInRight animated">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Recommended</h3>
+                            </div>
+                            <div class="panel-body recent-property-widget">
+                                        <ul>
+                                        <li>
+                                            <div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
+                                                <a href="single.html"><img src="assets/img/demo/small-property-2.jpg"></a>
+                                                <span class="property-seeker">
+                                                    <b class="b-1">A</b>
+                                                    <b class="b-2">S</b>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+                                                <h6> <a href="single.html">Super nice villa </a></h6>
+                                                <span class="property-price">3000000$</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col-md-3 col-sm-3  col-xs-3 blg-thumb p0">
+                                                <a href="single.html"><img src="assets/img/demo/small-property-1.jpg"></a>
+                                                <span class="property-seeker">
+                                                    <b class="b-1">A</b>
+                                                    <b class="b-2">S</b>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+                                                <h6> <a href="single.html">Super nice villa </a></h6>
+                                                <span class="property-price">3000000$</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
+                                                <a href="single.html"><img src="assets/img/demo/small-property-3.jpg"></a>
+                                                <span class="property-seeker">
+                                                    <b class="b-1">A</b>
+                                                    <b class="b-2">S</b>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+                                                <h6> <a href="single.html">Super nice villa </a></h6>
+                                                <span class="property-price">3000000$</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
+                                                <a href="single.html"><img src="assets/img/demo/small-property-2.jpg"></a>
+                                                <span class="property-seeker">
+                                                    <b class="b-1">A</b>
+                                                    <b class="b-2">S</b>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+                                                <h6> <a href="single.html">Super nice villa </a></h6>
+                                                <span class="property-price">3000000$</span>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            <div id="sortThis">
+
+                <div class="col-md-9  pr0 padding-top-40 properties-page">
+                    <div class="col-md-12 clear"> 
+                        <div class="col-xs-10 page-subheader sorting pl0">
+                            <ul class="sort-by-list">
+                                <li class="active">
+                                    <%= sort_link(@search, :created_at, "Product Date") %>
+                                   <!--  <a href="javascript:void(0);" class="order_by_date" data-orderby="property_date" data-order="ASC">
+                                        Property Date <i class="fa fa-sort-amount-asc"></i>					
+                                    </a> -->
+                                </li>
+                                <li class="">
+                                    <%= sort_link(@search, :price, "Product price") %>
+                                    <!-- <a href="javascript:void(0);" class="order_by_price" data-orderby="property_price" data-order="DESC">
+                                        Property Price <i class="fa fa-sort-numeric-desc"></i>						
+                                    </a> -->
+                                </li>
+                            </ul><!--/ .sort-by-list-->
+                        </div>
+
+                        <div class="col-xs-2 layout-switcher">
+                            <a class="layout-list" href="javascript:void(0);"> <i class="fa fa-th-list"></i>  </a>
+                            <a class="layout-grid active" href="javascript:void(0);"> <i class="fa fa-th"></i> </a>                          
+                        </div><!--/ .layout-switcher-->
+                    </div>
+
+                    <div class="col-md-12 clear"> 
+                        <div id="list-type" class="proerty-th">
+                            <% for property in @properties %>
+                                <div class="col-sm-6 col-md-4 p0">
+                                        <div class="box-two proerty-item">
+                                            <div class="item-thumb">
+                                                <%= image_tag property.image_url(:thumb)%>
+                                            </div>
+
+                                            <div class="item-entry overflow">
+                                                <h5><%= link_to h(property.name),property%></h5>
+                                                <div class="city"><i class="fa fa-map-marker fa-1x"><strong><%= property.city%>/<%= property.locality%></i></strong></div>
+                                                <div class="dot-hr"></div>
+                                                <span class="pull-left"><%= property.size %>/Sqfet</span>
+                                                <span class="proerty-price pull-right"><%= 'Rs %0.2f' % property.price%></span>
+                                                <p style="display: none"><%= property.desc%></p>
+                                                <div class="property-icon">
+                                                    <img src="assets/img/icon/bed.png">(<%= property.bedroom%>)|
+                                                    <img src="assets/img/icon/shawer.png">(<%= property.bathroom%>)|
+                                                    <i class="fa fa-home">(<%= property.bhk%>)</i>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                            <% end %>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12"> 
+                        <div class="pull-right">
+
+
+                            <div class="pagination">
+                                <div class="page_info">
+                                    <%= page_entries_info @properties %>
+                                </div>
+                                <div class="pagination_links">
+                                    <%= will_paginate @properties, :container => false %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <script>
+                    $(function(){
+                       $('#pagination a').attr('data-remote', 'true')
+                    });
+                    </script>
+
+                </div>  
+                </div>              
+            </div>
+        </div>
+
+<script>
+    function sortUsingNestedText(parent, childSelector, keySelector) {
+    var items = parent.children(childSelector).sort(function(a, b) {
+        var vA = $(keySelector, a).text();
+        var vB = $(keySelector, b).text();
+        return (vA < vB) ? -1 : (vA > vB) ? 1 : 0;
+    });
+    parent.append(items);
+}
+
+/* setup sort attributes */
+$('#sPrice').data("sortKey", "span.price");
+$('#sStyle').data("sortKey", "span.style");
+
+
+/* sort on button click */
+$("button.btnSort").click(function() {
+   sortUsingNestedText($('#sortThis'), "div", $(this).data("sortKey"));
+});
+
+
+</script>
+
+<style type="text/css">
+    .city{
+        margin-top: -10%;
+        padding-right: 10%;
+        float: right;
+    }
+</style>

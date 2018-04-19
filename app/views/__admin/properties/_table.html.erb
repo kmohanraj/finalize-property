@@ -1,0 +1,78 @@
+
+<div class="">
+    <div class="title-line wow fadeInRight animated"></div>
+</div>
+<div class="row wow fadeInRight animated">
+    <div class="col-sm-6">
+        <p class="author-category">
+            <a href="#">Properties</a>
+        </p>
+    </div>
+    <div class="col-sm-6 right" >
+            <div><%= link_to "New Property", new_admin_property_path %></div>
+        <!-- <p class="date-comments">
+            <a href="single.html"><i class="fa fa-comment-o"></i> 8 Comments</a>
+        </p> -->
+    </div>
+</div> 
+
+
+
+<table border=1 style="text-align: center; width: 310%;">
+	<tr>
+		<th>Project Name</th>
+		<th>Project Type</th>
+		<th>Price</th>
+		<th>BHK</th>
+		<th>Size</th>
+		<th>Status</th>
+		<th>Created_at</th>
+		<th>Action</th>
+	</tr>
+	<% for property in @properties %>
+    <tr>
+    	<tr>
+	   		<td><%= link_to h(property.name),edit_admin_property_path(property)%></td>
+	   		<td><% category = Category.find_by(id: property.category_id)%><%= category.name%></td>
+	   		<td><%= property.price%></td>
+	   		<td><%= property.bhk %></td>
+	   		<td><%= property.size%></td>
+	   		<td><%= property.status%></td>
+	   		<td><%= property.created_at%></td>
+	   		<td>
+	   		</td>
+	   			
+	   		<!-- <td><%#= image_tag property.image_url(:thumb)%></td> -->
+	   	</tr>
+	 </tr>
+	<% end %>
+</table>
+
+<!-- </div> -->
+
+<div class="col-md-12"> 
+    <div class="pull-right">
+        <div class="pagination">
+            <div class="page_info">
+                <%= page_entries_info @properties %>
+            </div>
+            <div class="pagination_links">
+                <%= will_paginate @properties, :container => false %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(function(){
+   $('#pagination a').attr('data-remote', 'true')
+});
+</script>
+
+
+<style type="text/css">
+	.new{
+		    float: right;
+		margin: -40px -198%;
+	}
+</style>

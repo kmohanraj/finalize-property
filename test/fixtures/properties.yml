@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  desc: MyText
+  price: 1.5
+  price_sqft: 1.5
+  bhk: MyString
+  size: 1
+  city: MyString
+  start_date: 2017-12-29
+  end_date: 2017-12-29
+  status: MyString
+  property_taype: MyString
+  sales_type: MyString
+  project_address: MyString
+  image: MyString
+  builder_name: MyString
+  category_id: 1
+
+two:
+  name: MyString
+  desc: MyText
+  price: 1.5
+  price_sqft: 1.5
+  bhk: MyString
+  size: 1
+  city: MyString
+  start_date: 2017-12-29
+  end_date: 2017-12-29
+  status: MyString
+  property_taype: MyString
+  sales_type: MyString
+  project_address: MyString
+  image: MyString
+  builder_name: MyString
+  category_id: 1

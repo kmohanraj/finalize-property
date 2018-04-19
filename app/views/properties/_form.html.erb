@@ -1,0 +1,84 @@
+<%= form_for @property do |pr| %>
+	<div>
+		<%= pr.label :name, "Property Name"%>
+		<%= pr.text_field :name, required: true %>
+	</div>
+
+	<div>
+		<%= pr.label :category_id, "Property Type"%>
+		<%= pr.select :category_id, Category.order("name ASC").map {|pt| [pt.name, pt.id]},:prompt =>"Select Category", required: true %>
+	</div>
+
+	<div>
+		<%= pr.label :desc, "Description" %>
+		<%= pr.text_field :desc ,required: true %>
+	</div>
+
+	<div>
+		<%= pr.label :price, "Price" %>
+		<%= pr.number_field :price, required: true %>
+	</div>
+
+	<div>
+		<%= pr.label :size, "Size" %>
+		<%= pr.text_field :size, required: true, :placeholder=>"100-200 sqft"%>
+	</div>
+
+	<div>
+		<%= pr.label :price_sqft, "Price/Sqft"%>
+		<%= pr.text_field :price_sqft, required: true, :placeholder=>"price per sqft" %>
+	</div>
+
+	<div>
+		<%= pr.label :bhk, "BHK" %>
+		<%= pr.text_field :bhk, required: true, :placeholder=>"1 BHK"%>
+	</div>
+
+	<div>
+		<%= pr.label :city, "City"%>
+		<%= pr.text_field :city, required: true %>
+	</div>
+
+	<div>
+		<%= pr.label :status, "Status"%>
+		<%= pr.text_field :status%>
+	</div>
+
+
+	<div>
+		<%= pr.label :sales_type, "Sales Type" %>
+		<%= pr.text_field :sales_type, required: true %>
+	</div>
+
+	<div>
+		<%= pr.label :project_address, "Project Address"%>
+		<%= pr.text_field :project_address, required: true%>
+	</div>
+
+	<div>
+		<%= pr.label :image, "Property Image"%>
+		<%= pr.file_field :image, required: true %>
+		<% if pr.object.image? %>
+		  <%= image_tag pr.object.image.thumb.url %>
+		  <%= pr.label :remove_image %>
+		  <%= pr.check_box :remove_image %>
+		<% end %>
+	</div>
+
+	<div>
+		<%= pr.label :builder_name, "Builder Name"%>
+		<%= pr.text_field :builder_name,required: true%>
+	</div>
+
+	<div>
+		<%= pr.submit "Save"%>
+	</div>
+
+<% end %>
+
+
+ <script>
+  $( function() {
+    $( ".datepicker" ).datepicker();
+  } );
+  </script>

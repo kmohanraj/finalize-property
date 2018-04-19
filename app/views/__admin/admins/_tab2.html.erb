@@ -1,0 +1,139 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<div class="page-head"> 
+  <div class="container">
+      <div class="row">
+          <div class="page-head-content">
+              <h1 class="page-title">Admin</h1>               
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="content-area blog-page padding-top-40" style="background-color: #FCFCFC; padding-bottom: 55px;">
+    <div class="container">
+      <div class="row">
+
+
+        <div class="tabs tabs-full">
+          <input id="tab1" type="radio" name="tabs" class="tab-input" checked />
+          <label for="tab1" class="tab-label"><i class="material-icons">info</i> Home</label>
+          <input id="tab2" type="radio" name="tabs" class="tab-input" />
+          <label for="tab2" class="tab-label"><i class="material-icons">people</i> Category</label>
+          <input id="tab3" type="radio" name="tabs" class="tab-input" />
+          <label for="tab3" class="tab-label"><i class="material-icons">lock</i> Properties</label>
+          <input id="tab4" type="radio" name="tabs" class="tab-input" />
+          <label for="tab4" class="tab-label"><i class="material-icons">lock</i> Messages</label>
+          <input id="tab5" type="radio" name="tabs" class="tab-input" />
+          <label for="tab5" class="tab-label"><i class="material-icons">lock</i> Users</label>
+          <div class="tabs-wrap">
+
+            <div class="tab" id="tab1content">
+
+                <p> Lorem ipsum dolor sit amet, consectetur nisirabitur blandit tempus porttitor. dolor sit adipiscing elit, sed do eiusmod tempor.
+                </p>
+            </div>
+
+            <div class="tab" id="tab2content">
+                <%#= render 'admin/categories/table'%>
+            </div>
+
+
+            <div class="tab" id="tab3content">
+                <%= render 'admin/properties/table'%>
+            </div>
+
+            <div class="tab" id="tab4content">
+                <p>
+                    Quisque pellentesque nibh massa. Integer sollicitudin neque metus
+                </p>
+            </div>
+
+            <div class="tab" id="tab5content">
+                <p>
+                    Quisque pellentesque nibh massa. Integer sollicitudin neque metus
+                </p>
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<style type="text/css">
+  /*  body {
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+}*/
+
+p {
+    margin: 0 0 1rem 0;
+}
+
+.material-icons {
+  vertical-align: middle;
+  line-height: 0;
+  margin-top: -5px;
+}
+
+/*
+ * Tabs
+ */
+
+.tabs {
+    padding: 0;
+}
+
+.tabs .tab-input {
+    display: none;
+}
+
+.tabs .tab-label {
+    color: #ddd;
+    cursor: pointer;
+    float: left;
+    padding: 1em;
+    text-align: center;
+}
+
+.tabs-full .tab-label {
+    display: table-cell;
+    float: none;
+    width: 1%;
+}
+
+.tabs .tab-label:hover {
+    color: #333;
+}
+
+.tabs .tab-input:checked + .tab-label {
+    background-color: #fff;
+    color: #333;
+}
+
+.tabs .tabs-wrap {
+    clear: both;
+}
+
+.tabs .tab {
+    background-color: #fff;
+    display: none;
+    padding: 1em;
+}
+
+.tabs .tab > *:last-child {
+    margin-bottom: 0;
+}
+
+#tab1:checked ~ .tabs-wrap #tab1content,
+#tab2:checked ~ .tabs-wrap #tab2content,
+#tab3:checked ~ .tabs-wrap #tab3content,
+#tab4:checked ~ .tabs-wrap #tab4content,
+#tab5:checked ~ .tabs-wrap #tab5content {
+    display: block;
+}
+</style>

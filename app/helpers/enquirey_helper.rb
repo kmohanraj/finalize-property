@@ -1,0 +1,2 @@
+module EnquireyHelper
+end

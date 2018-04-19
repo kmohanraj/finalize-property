@@ -1,0 +1,70 @@
+
+<div class="">
+    <div class="title-line wow fadeInRight animated"></div>
+</div>
+<div class="row wow fadeInRight animated">
+    <div class="col-sm-6">
+        <p class="author-category">
+            <a href="#">Categories</a>
+        </p>
+    </div>
+    <div class="col-sm-6 right" >
+            <%= link_to "New Category", new_admin_category_path %>
+       <!--  <p class="date-comments">
+            <a href="single.html"><i class="fa fa-comment-o"></i> 8 Comments</a>
+        </p> -->
+    </div>
+</div> 
+
+
+
+
+<table border=1 style="text-align: center; width: 310%;">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Status</th>
+		<th>Action</th>
+	</tr>
+	<% for category in @categories%>
+	<tr>
+		<tr>
+			<td><%= link_to category.name, edit_admin_category_path(category) %></td>
+			<td><%= category.desc %></td>
+			<td><%= link_to category.is_stock, edit_admin_category_path(category) %></td>
+			<td></td>
+			<!-- <td><img class="img_class" src="<%#= product.img %>"></td> -->
+		</tr>
+	</tr>
+	<% end %>
+</table>
+
+<!-- </div> -->
+
+<div class="col-md-12"> 
+    <div class="pull-right">
+        <div class="pagination">
+            <div class="page_info">
+                <%#= page_entries_info @categories %>
+            </div>
+            <div class="pagination_links">
+                <%= will_paginate @categories, :container => false %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+$(function(){
+   $('#pagination a').attr('data-remote', 'true')
+});
+</script>
+
+<style type="text/css">
+	.new{
+		    float: right;
+		margin: -40px -198%;
+	}
+</style>

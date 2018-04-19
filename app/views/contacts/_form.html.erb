@@ -1,0 +1,45 @@
+<%= form_for (@message),url: contacts_path(@message), html: {class: 'finance_form'}, method: :post, remote: true do |m| %>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= m.label :name, "Full Name:"%>
+                <%= m.text_field :name, class: "form-control", required: true%>
+            </div>
+        </div>
+        <!-- <div class="col-sm-6">
+            <div class="form-group">
+                <%#= m.label :last_name, "Last Name:"%>
+                <%#= m.text_field :last_name, class: "form-control"%>
+            </div>
+        </div> -->
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= m.label :email, "Email:"%>
+                <%= m.email_field :email, class: "form-control", required: true%>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= m.label :phone, "Mobile No:"%>
+                <%= m.text_field :phone, class: "form-control", id: 'phone', required: true%>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <%= m.label :subject, "Subject:"%>
+                <%= m.text_field :subject, class: "form-control", required: true%>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <%= m.label :desc, "Message:"%>
+                <%= m.text_area :desc, class: "form-control", required: true%>
+            </div>
+        </div>
+        <div class="submit">
+            <%= m.submit 'Send message', class: "btn btn-primary"%>
+            <!-- <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send message</button> -->
+        </div>
+    </div>
+<% end %>

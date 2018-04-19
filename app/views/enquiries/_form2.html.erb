@@ -1,0 +1,43 @@
+<%#= form_for (@invoice), html: {class: 'invoice_form'}, method: :post, remote: true do |f| %>
+ <%= form_for (:query), url: enquiries_path(@query), html: {class: 'finance_form'}, method: :post, remote: true do |f| %>
+  <div class="form-group row">
+    <%= f.label :name, "Brand Manager:", class: "col-4 col-form-label" %>
+    <div class="col-4">
+      <%= f.text_field :name, required: true, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :phone, "Customer Name:"%>
+    <div class="col-4">
+      <%= f.text_field :phone, required: true, class: 'form-control' %>
+    </div>
+  </div>
+
+  <!-- <div class="form-group row">
+    <%#= f.label :customer_name, "Customer Name:", class: "col-4 col-form-label" %>
+    <div class="col-8">
+      <%#= f.text_field :narration, required: true, class: 'form-control' %>
+    </div>
+  </div> -->
+
+  <div class="form-group row">
+   <%= f.label :locality, "Narration:" %>
+   <div class="col-4">
+     <%= f.text_field :locality, required: true, class: 'form-control' %>
+     <%#= select_tag :priority,  options_from_collection_for_select(DeskTask::ENUM_PRIORITY, :last, :first, @task.priority ), { :prompt => "Select Status", class: "ui selection tf_dropdown ", onchange: "priority_update('task_#{@task.id}', this)"} %>
+   </div>
+  </div>
+
+  <div class="form-group row">
+   <%= f.label :purpose, "Amount:" %>
+   <div class="col-4">
+     <%= f.number_field :purpose, required: true, class: 'form-control', min: 0 %>
+   </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit", class: 'btn btn-primary pull-right'  %>
+  </div>
+
+<% end %>

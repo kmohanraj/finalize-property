@@ -1,0 +1,75 @@
+<style>
+    #logo{
+            height: auto;
+    width: 150px;
+    margin-left: 53%;
+    margin-top: -6%;
+}
+</style>
+
+<!-- <div id="preloader">
+    <div id="status">&nbsp;</div>
+</div> -->
+<!-- Body content -->
+
+<div class="header-connect">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-8  col-xs-12">
+                <div class="header-half header-call">
+                    <p>
+                        <span class="wow pulse" data-wow-delay="1s"><i class="fa fa-phone" style="color: #fe5e02"></i> +91 234 567 7890</span>
+                        <span><a href="/homes"><img src="assets/img/header-logo.png" class="wow pulse" data-wow-delay="1s" id="logo"></a></span>
+                    </p>
+                </div>
+                
+            </div>
+            <div class="col-md-2 col-md-offset-5  col-sm-3 col-sm-offset-1  col-xs-12">
+                <div class="header-half header-social" style="margin-left: -240px;">
+                    <span class="top">Service Provide&nbsp;<i class="fa fa-map-marker fa-1x" style="color: red;"></i><strong>Chennai</strong>&nbsp;only.!</span>
+                    <ul class="list-inline">
+
+                                <!-- <li><a href="#"><i class="fa fa-home fa-2x"></i>Home</a></li> -->
+                                 <li class="wow fadeInDown" data-wow-delay="0.5s"><i class="fa fa-home fa-2x" style="color: #fd6000;"></i><%= link_to 'Property',properties_path%></li>
+
+                                 <li><%= link_to "Contact", contacts_path %></li>
+
+                                 <% unless user_signed_in? %>
+                                 <li class="wow fadeInDown" data-wow-delay="0.5s"><%= link_to "Login", new_user_session_path%></li>
+                                 <% end %>
+                                <!-- <li><a href="#"><i class="fa fa-user fa-2x"></i></a></li> -->
+                            <ul class="main-nav nav navbar-nav navbar-right">
+                                <% if user_signed_in?%>
+                                    <li class="dropdown ymm-sw " data-wow-delay="0.1s">
+                                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200"><span>Hi!  </span><%= current_user.email%><b class="caret"></b></a>
+                                        <ul class="dropdown-menu navbar-nav">
+                                            <li><%= link_to 'Account',accounts_path%></li>
+                                            <li><%= link_to 'Property'%></li>
+                                            <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+                                                
+                                            </li>
+                                            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete%>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                <%# else %>
+                                    <!-- <li class="wow fadeInDown" data-wow-delay="0.5s"><%#= link_to "Login", new_user_session_path%></li> -->
+                                <% end %>
+
+                            </ul>
+                        <!-- </div> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>        
+
+<style type="text/css">
+    .top{
+        width: 156%;
+    float: right;
+    margin-top: -21px;
+    }
+</style>
